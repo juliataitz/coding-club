@@ -1,10 +1,17 @@
 
-  <p>Become a Member of Your School's Club</p>
-      <form action='/member' method="post">
-      <p>Member's First Name: <input type="text" name="member_first"></p></br>
-      <p>Member's Last Name: <input type="text" name="member_last"></p></br>
-      <p>Member's Email: <input type="text" name="member_email"></p></br>
-      <p>Member's T-Shirt Size: <input type="text" name="member_size"></p></br>
-      <p>Member's Graduation Year: <input type="text" name="member_graduation"></p></br>
-      <input class="btn btn-primary" type="Submit">
-    </form>
+<p>Become a Member of Your School's Club</p>
+<form action='/member' method="post">
+	<p>Clubs:
+		<select name="club_id">
+	<% @clubs.each do |club| %>
+		<option value="<%= club.id %>"><%= club.school_name %></option>
+	<% end %>
+	</select>
+	</p>
+	<p>Member's First Name: <input type="text" name="member_first"></p></br>
+	<p>Member's Last Name: <input type="text" name="member_last"></p></br>
+	<p>Member's Email: <input type="text" name="member_email"></p></br>
+	<p>Member's T-Shirt Size: <input type="text" name="member_size"></p></br>
+	<p>Member's Graduation Year: <input type="text" name="member_graduation"></p></br>
+	<input class="btn btn-primary" type="Submit">
+</form>
