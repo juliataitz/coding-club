@@ -24,5 +24,23 @@ class ApplicationController < Sinatra::Base
     erb :login
   end
 
+  get '/club' do
+    erb :club
+  end
+
+
+  post '/club' do
+    @leader_first = params[:leader_first]
+    @leader_last = params[:leader_last]
+    @leader_email = params[:leader_email]
+    @leader_size = params[:leader_email]
+    @leader_graduation = params[:leader_graduation]
+    @school_name = params[:school_name]
+    @school_road = params[:school_road]
+    @school_city = params[:school_city]
+    @school_state = params[:school_state]
+    @school_zip = params[:school_zip]
+    erb :club
+  end
 
 end
