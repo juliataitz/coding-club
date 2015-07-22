@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150722164159) do
+ActiveRecord::Schema.define(version: 20150722180949) do
 
   create_table "clubs", force: :cascade do |t|
     t.string "leader_first"
@@ -24,6 +24,14 @@ ActiveRecord::Schema.define(version: 20150722164159) do
     t.string "school_city"
     t.string "school_state"
     t.string "school_zip"
+  end
+
+  create_table "members", force: :cascade do |t|
+    t.string "member_first"
+    t.string "member_last"
+    t.string "member_email"
+    t.string "member_size"
+    t.string "member_graduation"
   end
 
 end
