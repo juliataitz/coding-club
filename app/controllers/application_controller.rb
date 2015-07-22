@@ -32,19 +32,14 @@ class ApplicationController < Sinatra::Base
 
   post '/club' do
     @club = Club.new({ :leader_first => params[:leader_first], :leader_last => params[:leader_last], :leader_email => params[:leader_email], :leader_size => params[:leader_size], :leader_graduation => params[:leader_graduation], :school_name => params[:school_name], :school_road => params[:school_road], :school_city => params[:school_city], :school_state => params[:school_state], :school_zip => params[:school_zip]})
-    # @club = Club.new(params[:leader_first], params[:leader_first], params[:leader_email], params[:leader_size], params[:leader_graduation], params[:school_name], params[:school_road], params[:school_city], params[:school_state], params[:school_zip] )
     @club.save
-    # @leader_first = params[:leader_first]
-    # @leader_last = params[:leader_last]
-    # @leader_email = params[:leader_email]
-    # @leader_size = params[:leader_size]
-    # @leader_graduation = params[:leader_graduation]
-    # @school_name = params[:school_name]
-    # @school_road = params[:school_road]
-    # @school_city = params[:school_city]
-    # @school_state = params[:school_state]
-    # @school_zip = params[:school_zip]
     erb :club
+  end
+
+  post '/member' do
+    @member = Member.new({ :member_first => params[:member_first], :member_last => params[:member_last], :member_email => params[:member_email], :member_size => params[:member_size], :member_graduation => params[:member_graduation]})
+    @member.save
+    erb :member
   end
 
 end
